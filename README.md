@@ -1,3 +1,8 @@
+启动tomcat之后，springdemo的war包已经搭好了，对应的demo为https://github.com/jason0539/StudySpring的tag 1.0
+访问首页：http://127.0.0.1:8080/springdemo/
+访问rest接口：http://127.0.0.1:8080/springdemo/user/detail
+访问jsp页面：http://127.0.0.1:8080/springdemo/user/detail/page
+
 ## Welcome to Apache Tomcat!
 
 ### What Is It?
