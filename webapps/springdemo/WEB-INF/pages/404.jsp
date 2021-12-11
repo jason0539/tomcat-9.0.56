@@ -44,8 +44,6 @@
    </p>
     <ul>
       <li><%=request.getContextPath()%>/html for the HTML GUI</li>
-      <li><%=request.getContextPath()%>/text for the text interface</li>
-      <li><%=request.getContextPath()%>/jmxproxy for the JMX proxy</li>
       <li><%=request.getContextPath()%>/status for the status pages</li>
     </ul>
    <p>

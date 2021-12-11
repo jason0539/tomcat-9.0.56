@@ -1,11 +1,6 @@
 Manifest-Version: 1.0
-Implementation-Title: springdemo
-Implementation-Version: 1.0-SNAPSHOT
-Start-Class: lzh.example.App
-Spring-Boot-Classes: WEB-INF/classes/
-Spring-Boot-Lib: WEB-INF/lib/
-Build-Jdk-Spec: 1.8
-Spring-Boot-Version: 2.4.5
-Created-By: Maven WAR Plugin 3.3.1
-Main-Class: org.springframework.boot.loader.WarLauncher
+Archiver-Version: Plexus Archiver
+Built-By: liuzhenhui
+Created-By: Apache Maven 3.5.0-210131.
+Build-Jdk: 1.8.0_181
 
