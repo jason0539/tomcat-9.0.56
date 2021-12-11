@@ -4,50 +4,54 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 增加依赖 parent 项目spring-boot-starter-parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.5</version>
+    </parent>
+
     <groupId>lzh.example</groupId>
     <artifactId>SpringDemo</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <name>springdemo</name>
     <url>http://maven.apache.org</url>
+    <!-- 打包形式修改为 war -->
     <packaging>war</packaging>
 
     <properties>
-        <java.version>8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--optional, 如果项目代码包含多个main()函数, 需要告知SpringBoot真正的入口class-->
+        <start-class>lzh.example.App</start-class>
     </properties>
 
     <dependencies>
-
-        <!-- Servlet Library -->
-        <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- marked the embedded tomcat servlet container as provided -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spring dependencies -->
-        <!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <!-- 支持jsp -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>5.1.20.RELEASE</version>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
 
-        <!-- http://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <!-- spring-boot-devtools, 在开发过程中支持Auto restart 和 auto reload, 打包为war/jar不会包含该依赖.-->
+        <!-- 删除后无法热加载       -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.1.20.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
-
-        <!-- http://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.1.20.RELEASE</version>
-        </dependency>
-
     </dependencies>
 
     <build>
